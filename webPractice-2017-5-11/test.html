@@ -1,0 +1,18 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+</head>
+<script type="text/javascript">       
+ var bull = [];      
+   bull[0]  = {            x:300,            y:0        }     
+ 
+    bull.push(bull[0])       
+  bull.push({            x:300,            y:0        })       
+   console.log(bull[0]===bull[1])//true      
+     console.log(bull[0]===bull[2])//false
+     </script>
+<body>
+</body>
+</html>

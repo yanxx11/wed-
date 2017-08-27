@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+/*transform的属性包括：rotate() / skew() / scale() / translate(,) ，分别还有x、y之分，比如：rotatex() 和 rotatey() ，以此类推。
+
+有五种变形样式，可以重叠多种变形样式，以空格分隔
+
+1.scale：缩放，1为原始大小。scale(x)。正数放大，负数缩小。属性值为一个时，x/y轴同时缩放；属性值为两个值时，分别控制x、y轴的缩放。*/
+div{margin-bottom:30px;}
+
+.scale{width:100px;height:50px;background:#f00;
+-webkit-transition:all 5s ease;color:#fff;/*变化方案三*/
+/*border-radius:5px 5px;padding:5px;*/}
+.scale:hover{-webkit-transform:scale(1.5);-moz-transform:scale(1.5);-o-transform:scale(1.5);/*扩大1.5倍*/}
+
+.scale1{width:100px;height:50px;background:#f00;-webkit-transition:all 5s ease;color:#fff;border-radius:5px 5px;padding:5px;}
+.scale1:hover{-webkit-transform:scale(1.5);-moz-transform:scale(1.5);-o-transform:scale(1.5);-webkit-transform-origin:top center;/*-webkit-transform-origin设定了变换源点*/} 
+
+
+/*2.rotate：水平旋转，属性值格式为Xdeg。(deg是“度”的意思)rotate(Xdeg)。X为正数时，顺时针旋转；为负数时，逆时针旋转*/
+
+.rotate{width:100px;height:50px;background:#f00;-webkit-transition:all .5s ease;
+color:#fff;border-radius:5px 5px;padding:5px;}
+.rotate:hover{-webkit-transform:rotate(-10deg);-moz-transform:rotate(-10deg);
+-o-transform:rotate(-10deg);}
+
+
+/*3.translate：定位元素，基于XY轴重新定位元素。translate(Xpx,Ypx)。属性值为一个时，x、y轴参数相同；为两个时，x、y轴分别定位*/
+
+.translate{width:100px;height:50px;background:#f00;-webkit-transition:all .5s ease;
+color:#fff;border-radius:5px 5px;padding:5px;}
+.translate:hover{-webkit-transform:translate(10px,-10px);-moz-transform:translate(10px,-10px);
+-o-transform:translate(10px,-10px);}
+
+/*4.skew：将元素沿水平方向倾斜变形。skew(Xdeg,Ydeg)。这个比较难表述，想象一下平行四边形吧。属性值为一个时，x、y轴参数相同；为两个时，x、y轴各自倾斜*/
+
+.skew{width:100px;height:50px;background:#f00;-webkit-transition:all .5s ease;
+color:#fff;border-radius:5px 5px;padding:5px;}
+.skew:hover{-webkit-transform:skew(20deg,-10deg);-moz-transform:skew(20deg,-10deg);
+-o-transform:skew(20deg,-10deg);}
+
+.skew1{width:100px;height:50px;background:#f00;-webkit-transition:all .5s ease;
+color:#fff;border-radius:5px 5px;padding:5px;}
+.skew1:hover{-webkit-transform:skew(20deg,-10deg);-moz-transform:skew(20deg,-10deg);
+-o-transform:skew(20deg,-10deg);-webkit-transform-origin:top center;/*-webkit-transform-origin设定变换源点*/}
+
+/* 5.matrix：矩阵，六个值。*/
+
+.matrix{width:100px;height:50px;background:#f00;-webkit-transition:all .5s ease;
+color:#fff;border-radius:5px 5px;padding:5px;}
+.matrix:hover{-webkit-transform:matrix(1,-0.2,0,1,0,0);-moz-transform:matrix(1,-0.2,0,1,0,0);
+-o-transform:matrix(1,-0.2,0,1,0,0);}
+</style>
+</head>
+
+<body>
+<div class="scale">scale</div>
+<div class="scale1">scale1</div>
+<div class="rotate">rotate</div>
+<div class="translate">translate</div>
+<div class="skew">skew</div>
+<div class="skew1">skew1</div>
+<div class="matrix">matrix</div>
+</body>
+</html>

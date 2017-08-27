@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<body>
+ <style>
+	#test {width: 270px; height: 130px; overflow: hidden; border: 1px solid #333;}
+	#test a {display: block; width: 270px; height: 130px; text-align: center; background: #fff;}
+	#test a img {border: none;}
+ </style>
+
+
+<div id="test">
+	<a href="#"><img  src="http://filesimg.111cn.net/2011/05/2011091500430498.gif" /></a>
+	<a href="#"><img  src="http://filesimg.111cn.net/2011/05/2011091500431157.gif" /></a>
+	<a href="#"><img  src="http://filesimg.111cn.net/2011/05/20110915004317747.png" /></a>
+</div>
+
+
+<script language="javascript">
+	i=0;
+	function show() {
+		l=document.getElementsByTagName('a');
+		if (i<l.length-1){
+			l[i].style.display = "none";
+			i++;
+		}else {
+			for(a=0;a<l.length-1;a++){
+				l[a].style.display = "block";
+				i=0;
+			}
+		}
+	}
+	setInterval(show, 1000);
+</script>
+ </body>
+ </html>

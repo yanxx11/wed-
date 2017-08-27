@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+
+.triange_up
+{
+	width:0px;height:0px;line-height:0;
+	overflow:hidden;border-bottom:17px solid red;
+	border-left:10px dashed transparent;
+	border-right:10px dashed transparent;
+	position:relative;/*位置运行要有定位*/
+	
+	animation-name:mymove;
+	animation-duration:5s;
+	animation-timing-function:linear;
+	/*animation-delay:2s;*/
+	animation-iteration-count:3;
+	animation-direction:alternate;
+	animation-play-state:running;
+	animation-fill-mode:forwards;/*both 执行完后是最后一帧动画的状态*/
+	/*none 执行完后是第一帧动画的状态*/
+	/*forwards 执行完后是最后一帧动画的状态*/
+	/*backwards 执行完后是第一帧动画的状态*/
+	
+	/*safari chrom*/
+	-webkit-animation-name:mymove;
+	-webkit-animation-duration:5s;
+	-webkit-animation-delay:1s;
+	-webkit-animation-timing-function:linear;
+	-webkit-animation-play-state:running;
+	-webkit-animation-direction:alternate;
+	-webkit-animation-iteration-count:infinite;
+/*firefox*/
+-moz-animation-name:mymove;
+-moz-animation-duration:5s;
+-moz-animation-delay:1s;
+-moz-animation-timing-function:linear;
+-moz-animation-play-state:running;
+-moz-animation-direction:normal;
+-moz-animation-iteration-count:infinate;
+/*opera*/
+-o-animation-name:mymove;
+-o-animation-duration:5s;
+-o-animation-delay:1s;
+-o-animation-timing-function:linear;
+-o-animation-direction:normal;
+-o-animation-iteration-count:2;
+-o-animation-play-state:running;
+}
+
+/*@keyframes mymove
+{
+	from{left:0;}
+	to{left:200px;}
+}*/
+@keyframes mymove {
+   0% {
+      top: 0;
+      left: 340px;
+      border-bottom-color: red;
+   }
+
+   33% {
+      top: 340px;
+      left: 340px;
+      border-bottom-color: green;
+   }
+
+   66% {
+      top: 340px;
+      left: 40px;
+      border-bottom-color: blue;
+   }
+
+   100% {
+      top: 0;
+      left: 40px;
+      border-bottom-color: yellow;
+   }
+}
+#div1{
+width: 200px;
+height: 200px;
+background: red;
+transition:   all ease 0.5s;
+margin: 50px auto 0;
+}
+#div1:hover{
+width: 400px;
+height: 400px;
+background: blue;
+border-radius: 5%;
+}
+
+</style>
+</head>
+
+<body>
+<div class="triange_up">123</div>
+<div id="div1">123</div>
+
+</body>
+</html>

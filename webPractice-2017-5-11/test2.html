@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0;}
+body{ background:black;}
+#c1{ background:white; margin:0px auto;}
+</style>
+<script>
+window.onload = function(){
+	var oC=document.getElementById('c1');
+	var oGc=oC.getContext('2d');
+//	oGc.save();
+var i=0;
+	setInterval(function(){oGc.clearRect(0,0,oC.width,oC.height );	
+			i++;
+			var arrColr=['rgba(255,0,0,1)','rgba(0,255,0,1)','rgba(0,0,255,1)','rgba(0,0,0,1)'];
+			
+			oGc.fillStyle=arrColr[Math.floor(Math.random()*arrColr.length)];
+			//console.log(oGc.fillStyle);
+			oGc.beginPath();
+		//	oGc.moveTo(bull[i].x,bull[i].y);
+			oGc.arc(i++,i++,20,0*Math.PI/180,360*Math.PI/180,false);
+		//	console.log(bull[i]);
+			oGc.fill();},100);
+	
+	
+};
+</script>
+</head>
+
+<body>
+
+	<canvas id="c1" width="600" height="600"></canvas>
+</body>
+</html>
