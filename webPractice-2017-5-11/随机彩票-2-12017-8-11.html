@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+</head>
+<script>
+window.onload=function()
+{
+	var oDiv=document.getElementById("div1");
+	var oBtn=document.getElementById("btn");
+	var arr=[];
+	for(var i=0;i<35;i++)
+	{
+			arr.push(i);
+	}
+		
+	var json={};
+	oBtn.onclick=function()
+	{
+		var arrNum=randomNum(arr,7);
+		oDiv.innerHTML=arrNum;
+		history.pushState(arrNum,'');
+	}
+	history.popstate=function()
+	{
+		oDiv.innerHTML=event.state;
+	}
+	function randomNum(arr,num)
+	{
+		var arrRandom=[];
+		for(var i=0;i<7;i++)
+		{
+			
+			arrRandom.push(arr[Math.floor(Math.random()*35)]);
+		}
+		return arrRandom;
+	}
+}
+</script>
+<body>
+<input type='button' value="随机" id='btn'>
+<div id='div1'></div>
+</body>
+</html>

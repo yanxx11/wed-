@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+#wrap{width:300px;height:400px;border:1px solid #000;margin-top:30px;margin-left:380px;overflow: hidden;}
+#bg{width:600px;height:400px;background:blue;position:relative;left:0;}
+#leftdiv{width:80px;height:200px;background:pink;position:absolute;left:0;bottom:0;}
+#middlediv{width:80px;height:200px;background:pink;position:absolute;left:200px;bottom:0}
+#righttdiv{width:80px;height:200px;background:pink;position:absolute;left:350px;bottom:0}
+#hero{width:40px;height:40px;background:red;position:absolute;left:0;bottom:200px;}
+#stick{width:0px;height:6px;background:purple;position:absolute;left:20px;bottom:0px;
+transform:rotate(-90deg);transform-origin:0 6px;}
+</style>
+</head>
+
+<body>
+<div id="wrap">
+    <div id="bg">
+        <div id="leftdiv"></div>
+        <div id="middlediv"></div>
+        <div id="righttdiv"></div>
+        <div id="hero"><div id="stick"> </div> </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+	window.onload=function()
+	{
+		var oWrap=document.getElementById("wrap");
+		var oBg=document.getElementById("bg");
+		var oLeftdiv=document.getElementById("leftdiv");
+		var oMiddlediv=document.getElementById("middlediv");
+		var oRightdiv=document.getElementById("righttdiv");
+		var oHero=document.getElementById("hero");
+		var oStick=document.getElementById("stick");
+		var timer=null;
+		var num=0;
+		var middleLeft=0;
+		var step=0;
+		document.onmousedown=function()
+		{
+			clearInterval(timer);
+			timer=setInterval(function(){
+				num++;
+				oStick.style.width=num+'px';
+				},10);
+				oBg.style.transition = "1s";
+	    	oBg.style.left = -middlediv.offsetLeft + "px";
+		}
+	/*	document.onmouseup=function()
+		{
+			clearInterval(timer);
+			 middleLeft=oMiddlediv.offsetLeft;
+			oStick.style.transition='1s';//渐变时会变粗，然后变小,变快一点就看不到这个过程了
+			oStick.style.transform='rotate(0deg)';
+			num=0;
+			
+		}
+		 oStick.addEventListener("transitionend",function(ev){
+	    		oHero.style.transition = "1s";
+	    		oHero.style.left = middlediv.offsetLeft + "px";
+	    });
+		
+		oHero.addEventListener('transitionend',function(ev){
+			oBg.style.transition = "1s";
+	    	oBg.style.left = -middlediv.offsetLeft + "px";
+			ev.stopPropagation();
+		});*/
+		
+			
+			
+			
+	}
+	
+	
+</script>

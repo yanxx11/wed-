@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+#box{width:100px;height:100px;border:1px solid #000;background:yellow;}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+<p>请旋转这个黄色的 div 元素：</p>
+<div id='box'></div>
+<p>旋转<br>
+<input type='range' id='range' value='7' min='-360' max='360'  />
+<br>
+transform:rotate(<span id='deg'>7</span>deg);
+</p>
+</div>
+</body>
+</html>
+<script>
+window.onload=function()
+{
+	var oBox=document.getElementById('box');
+	var oDeg=document.getElementById('deg');
+	var oRange=document.getElementById('range');
+	console.log(oRange.value);
+	//oBox.style.transform='rotate(60deg)';
+	
+	oRange.onchange=function(){
+		rotate(this,deg);
+		}
+		function rotate(obj,deg)
+		{
+				oDeg.innerHTML=obj.value;
+		alert('rotate('+obj.value+'deg)');
+		console.log('rotate('+deg+'deg)');
+		 oBox.style.transform='rotate('+obj.value+'deg)';
+		}
+}
+//oRange.style.transform='rotate('+value)';
+	/*function rotate(deg)//html内部调用的函数不能写在window.onload里面，否则会报错
+	{
+		document.getElementById('deg').innerHTML=deg;
+		document.getElementById('box').style.transform='rotate('+deg+'deg)';
+	}*/
+</script>
